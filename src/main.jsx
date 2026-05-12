@@ -15,13 +15,13 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Navigate to="/gallery" replace />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route index element={<Navigate to="/galeria" replace />} />
+          <Route path="galeria" element={<Gallery />} />
+          <Route path="iniciar-sesion" element={<Login />} />
+          <Route path="registrarse" element={<Register />} />
           <Route path="profile" element={<Profile />} />
           <Route path="product/:id" element={<ProductDetail />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="carrito" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>

@@ -45,10 +45,10 @@ export default function ProductDetail() {
 
     if (!product) {
         return (
-            <div className="flex flex-col items-center justify-center h-64 space-y-4">
-                <p className="text-xl text-gray-600">Producto no encontrado.</p>
+            <div className="font-sans flex flex-col items-center justify-center h-64 space-y-4">
+                <p className="text-xl text-gray-400">Producto no encontrado.</p>
                 <button
-                    onClick={() => navigate('/gallery')}
+                    onClick={() => navigate('/galeria')}
                     className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
                 >
                     Volver a la galería
@@ -63,7 +63,7 @@ export default function ProductDetail() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             {/* Back button */}
             <button
-                onClick={() => navigate('/gallery')}
+                onClick={() => navigate('/galeria')}
                 className="flex items-center gap-2 text-gray-500 hover:text-purple-600 transition-colors mb-6 group"
             >
                 <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export default function ProductDetail() {
                 Volver a la galería
             </button>
 
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-[#1f2937]/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden">
                 <div className="md:flex">
                     {/* Image */}
                     <div className="md:w-1/2 relative">
@@ -89,42 +89,42 @@ export default function ProductDetail() {
                     {/* Info */}
                     <div className="md:w-1/2 p-8 flex flex-col justify-between">
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.title}</h1>
+                            <h1 className="text-3xl font-gothic tracking-wide text-gray-100 mb-2">{product.title}</h1>
 
                             {/* Rating */}
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="text-xl">{renderStars(product.rate)}</div>
-                                <span className="text-sm text-gray-500">({product.rate} / 5)</span>
+                                <span className="font-sans text-sm text-gray-400">({product.rate} / 5)</span>
                             </div>
 
                             {/* Price */}
-                            <p className="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-6">
+                            <p className="text-4xl font-gothic tracking-wide text-gray-100 mb-6">
                                 ${product.price}
                             </p>
 
                             {/* Description */}
-                            <p className="text-gray-600 leading-relaxed mb-8">
+                            <p className="font-sans text-gray-300 leading-relaxed mb-8">
                                 {product.description}
                             </p>
                         </div>
 
                         <div className="space-y-4">
                             {/* Quantity selector */}
-                            <div className="flex items-center gap-4">
-                                <span className="text-sm font-medium text-gray-700">Cantidad:</span>
+                            <div className="font-sans flex items-center gap-4">
+                                <span className="text-sm font-medium text-gray-300">Cantidad:</span>
                                 <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
                                     <button
                                         onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                                        className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition-colors text-lg font-bold"
+                                        className="w-10 h-10 flex items-center justify-center text-gray-300 hover:bg-gray-700 transition-colors text-lg font-bold"
                                     >
                                         −
                                     </button>
-                                    <span className="w-12 text-center font-semibold text-gray-900">
+                                    <span className="w-12 text-center font-semibold text-gray-100">
                                         {quantity}
                                     </span>
                                     <button
                                         onClick={() => setQuantity(q => q + 1)}
-                                        className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition-colors text-lg font-bold"
+                                        className="w-10 h-10 flex items-center justify-center text-gray-300 hover:bg-gray-700 transition-colors text-lg font-bold"
                                     >
                                         +
                                     </button>
@@ -134,7 +134,7 @@ export default function ProductDetail() {
                             {/* Add to cart button */}
                             <button
                                 onClick={handleAddToCart}
-                                className={`w-full py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300 ${
+                                className={`font-sans w-full py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300 ${
                                     added
                                         ? 'bg-green-500 scale-95'
                                         : 'bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 hover:opacity-90 hover:shadow-lg hover:shadow-purple-200 active:scale-95'

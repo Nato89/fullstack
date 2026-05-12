@@ -2,14 +2,25 @@
 
 @theme {
   /* Definición de colores del ADN */
-  --color-brand-blue: #4D61FF;
-  --color-brand-dark: #32325d;
-  --color-brand-muted: #8898aa;
-  --color-brand-border: #dee2e6;
+  --color-brand-blue: #a855f7;
+  --color-brand-dark: #f8fafc;
+  --color-brand-muted: #94a3b8;
+  --color-brand-border: #334155;
   
   /* Ajustes de radio y sombras para el estilo moderno de la imagen */
   --radius-dna: 0.5rem;
-  --shadow-dna: 0 4px 11px rgba(77, 97, 255, 0.35);
+  --shadow-dna: 0 4px 11px rgba(168, 85, 247, 0.35);
+
+  /* Configuración de Tipografías */
+  --font-gothic: 'UnifrakturMaguntia', cursive;
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: 'Lora', serif;
+  }
 }
 
 /* 2. Componentes base con @variant o clases de capa */
